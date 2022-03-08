@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <a href="/#">Home</a>
+  <a href="/contact">Contact</a>
+  <a href="/about">About</a>
+  
+</body>
+
+<script>
+  // NOT BAD, BUT CANNOT MOVE BACK .. //
+
+  const liens = document.querySelectorAll('a')
+  liens.forEach((el) => el.addEventListener('click', () => { 
+    event.preventDefault() // LE TRUC QUI CHANGE TOUT OMG !!
+    console.log("slt")
+    location.href = "https"
+  }))
+  const liensArray = Array.from(liens) // si jamais besoin de traduire un NodeList into une array
+
+
+</script>
+</html>
