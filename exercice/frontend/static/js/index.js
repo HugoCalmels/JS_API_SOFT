@@ -4,6 +4,9 @@ console.log("JS is loaded")
 import Home from "./views/Home.js";
 import PageList from "./views/PageList.js";
 import PageDetails from "./views/PageDetails.js";
+import { drawPlatformsSelectOptions } from './utils/drawPlatforms.js'
+
+
 
 const navigateTo = url => {
   history.pushState(null, null, url);
@@ -56,3 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
  router()
 })
+
+
+// -------------------- //
+
+
+

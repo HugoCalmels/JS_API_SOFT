@@ -1,0 +1,22 @@
+nav {
+  font-family: 'League Gothic', sans-serif;
+  border-bottom: 4px solid black;
+}
+
+.nav-container {
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-between;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 2rem;
+  border: 2px solid black;
+  padding: 1rem 0.5rem;
+
+}

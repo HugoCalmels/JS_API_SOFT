@@ -5,16 +5,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RAWR app</title>
-  <link href="/static/css/index.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=League+Gothic&display=swap" rel="stylesheet">
+  <link href="./static/public/css/style.css" rel="stylesheet">
 </head>
 <body>
 
   <nav class="nav">
+    <div class="nav-container">
     <a href="/" class="nav__link" data-link>Home</a>
     <a href="/PageList" class="nav__link" data-link>PageList</a>
     <a href="/PageDetails" class="nav__link" data-link>PageDetails</a>
+    </div>
   </nav>
+  <div class="wrapper-select">
+
+  </div>
+  <div class="wrapper-inputs">
+    <input id="search-input" type="text" placeholder="search for a game..">
+  </div>
+
+ 
   <div id="app"></div>
+
 
   <script type="module" src="/static/js/index.js"></script>
 </body>

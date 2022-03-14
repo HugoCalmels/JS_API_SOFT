@@ -1,0 +1,177 @@
+.grid {
+  color: white;
+  font-size: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid yellow;
+  margin-top: 10rem;
+}
+
+@media (max-width: 1400px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+.grid-item {
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  width: 25em;
+  height: 25em;
+}
+
+.grid-image {
+  height: 18em;
+  width: 100%;
+}
+
+.grid-item img {
+  display: block;
+  height: 100%;
+  width: 25em;
+  object-fit: cover;
+  border-radius: 0.15rem;
+}
+
+.grid-content h4 {
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  margin-top: -3rem;
+}
+
+.grid-content-platforms {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -3rem;
+  gap: 0.5rem;
+}
+
+.grid-content {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+@media (max-width: 600px) {
+  .grid-item {
+    width: 100%;
+    height: 300px;
+    padding: 5%;
+  }
+
+  .grid-image {
+    height: 100%;
+  }
+
+  .grid-item img {
+    width: 100%;
+  }
+
+  .grid-content-platforms {
+    margin-top: -0.5rem;
+  }
+
+  .grid-content h4 {
+    margin-top: 0;
+  }
+}
+.wrapper-select {
+  position: absolute;
+  z-index: 4;
+}
+
+.select-elem {
+  margin-top: 3rem;
+  display: inline-block;
+  background-color: pink;
+  padding: 0.25rem 0.5rem;
+  position: relative;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  width: 250px;
+}
+
+.select-value {
+  border: 2px solid red;
+  padding: 0.25rem 0.5rem;
+}
+
+.select-btn-up {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.6rem;
+}
+
+.select-btn-down {
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.6rem;
+  transform: rotate(180deg);
+}
+
+.select-options-list {
+  background-color: orange;
+}
+
+.select-options-list {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 250px;
+}
+
+.select-options-list.show {
+  display: block;
+}
+
+.wrapper-select li {
+  cursor: pointer;
+}
+
+.wrapper-select li:hover {
+  background-color: green;
+}
+
+.select-elem:focus {
+  outline: none;
+  border: 4px solid green;
+}
+
+li .selected {
+  background-color: purple !important;
+}
+
+li .prev-selected {
+  background-color: red;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  font-family: "Fredoka", sans-serif;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */

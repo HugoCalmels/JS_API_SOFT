@@ -1,0 +1,19 @@
+.grid {
+  width: 100%;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1.5em;
+  grid-gap: 1.5em;
+}
+
+@media (max-width: 768px){
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-elem{
+  border: 2px solid black;
+  padding: 5rem;
+}

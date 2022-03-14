@@ -1,0 +1,109 @@
+nav {
+  font-family: "League Gothic", sans-serif;
+  border-bottom: 4px solid black;
+}
+
+.nav-container {
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-between;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 2rem;
+  border: 2px solid black;
+  padding: 1rem 0.5rem;
+}
+
+.wrapper-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+}
+
+#search-input {
+  font-size: 1.5rem;
+  border: 2px solid black;
+  padding: 1vmin 0.5vmin;
+  letter-spacing: 0.075vmin;
+  width: 280px;
+  outline: none;
+  border: 4px solid black;
+  border-radius: 0.5rem;
+  font-family: "Fredoka", sans-serif;
+}
+
+.wrapper-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid green;
+  font-family: "Fredoka", sans-serif;
+}
+
+.wrapper-select > * {
+  padding: 0.5rem;
+  border: 2px solid blue;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  background: orange;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wrapper-select > *:hover {
+  background: #fcbc47;
+}
+
+.grid {
+  width: 100%;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1.5em;
+  grid-gap: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+.grid-elem {
+  border: 2px solid black;
+  padding: 5rem;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid orange;
+}
+
+.button-container {
+  text-align: center;
+}
+
+#btn-show-more {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

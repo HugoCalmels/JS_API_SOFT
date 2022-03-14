@@ -1,0 +1,25 @@
+.wrapper-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid green;
+
+  font-family: 'Fredoka', sans-serif;
+
+}
+
+
+.wrapper-select > *{
+  padding: .5rem;
+  border: 2px solid blue;
+  margin: .5rem;
+  border-radius: .25rem;
+  background: orange;
+  font-weight: 600;
+  cursor:pointer;
+}
+
+.wrapper-select > *:hover{
+  background: rgb(252, 188, 71);
+}
+
