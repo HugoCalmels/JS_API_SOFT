@@ -1,176 +1,64 @@
 import { triangle } from '../assets/svgs/triangle.js'
-const body = document.querySelector('html')
+
 
 export default class Select {
-  constructor(optionsList, wrapper) {
-
-    this.optionsList = optionsList
- 
-
+  constructor(data, wrapper) {
+    console.log("----START SELECT CONSTRUCTOR-----")
+    this.data = data;
     this.wrapper = wrapper
-    this.customElement = document.createElement('div')
-    this.spanElement = document.createElement('span')
-    this.upArrowBtn = document.createElement('div')
-    this.downArrowBtn = document.createElement('div')
-    this.optionsElementsList = document.createElement('ul')
-
-    
-    this.selectedOption = ''
-
-
-    initialize(this)
-    listen(this)
-
-    
+    this.options = this.initializeOptionsList()
+    this.customSelectElement = document.createElement("div")
+    this.labelElement = document.createElement('span')
+    this.optionList = document.createElement('ul')
+    build(this)
+    console.log("----END SELECT CONSTRUCTOR-----")
   }
 
-  get customSelectedOption() {
-
-    let options = this.optionsElementsList.querySelectorAll('li')
-
-
-
-    options.forEach((option) => {
-      if (option.classList.contains('selected')) {
-        console.log('//////////////////////////////////////')
-        console.log(options)
-        console.log(option)
-        return option
-      }
+  initializeOptionsList() {
+    const defaultOption = { name: "any", id: 0 }
+    let newOptionsList = []
+    newOptionsList.push(defaultOption)
+    this.data.forEach((option) => {
+    let game = { name: option.name, id: option.id }
+      newOptionsList.push(game)
     })
-
-    /*
-   this.optionsElementsList.querySelectorAll('li').find((option) => {
-      console.log(option)
-      //option.classList.contains('selected')
-     })
-     */
+    return newOptionsList
   }
-
 }
 
 
-function initialize(item) {
+function build(item) {
+  console.log('AAAAAAAAAAAAA')
+  item.customSelectElement.className = 'select-container'
+  item.customSelectElement.innerText = 'Platform : '
+  console.log('AAAAAAAAAAAAA')
 
+  item.labelElement.innerText = item.options[0].name
 
-  item.optionsElementsList.classList.remove("show")
-  item.customElement.className = "select-elem"
-  item.customElement.innerText = "Platform : "
-  item.customElement.addEventListener("click", () => {
-      item.optionsElementsList.classList.toggle("show")
-      //item.customElement.setAttribute("tabindex", 0)
-    //item.customElement.focus()
+  item.wrapper.append(item.customSelectElement)
+
+  item.customSelectElement.addEventListener("click", () => {
+    item.optionList.classList.toggle("show") // dropdown menu
   })
 
-  item.customElement.addEventListener("blur", () => {
-    item.optionsElementsList.classList.remove("show")
-  })
-
-  //console.log("------------")
-  //console.log(item.optionsList)
-  //console.log("------------")
-
-  
-
-  item.spanElement.className = "select-value"
-  item.spanElement.innerText = `item.optionsList[0]`
-  item.customElement.append(item.spanElement)
-
-  item.upArrowBtn.className = "select-btn-up"
-  item.upArrowBtn.innerHTML = triangle
-  item.customElement.append(item.upArrowBtn)
-
-  item.downArrowBtn.className = "select-btn-down"
-  item.downArrowBtn.innerHTML = triangle
-  item.customElement.append(item.downArrowBtn)
-
-  item.wrapper.append(item.customElement)
-
-  item.optionsElementsList.className = "select-options-list"
-  
-  //item.optionsElementsList.innerHTML += `<li>any</li>`
-  item.optionsList.forEach((option) => {
-    let setOneOption = document.createElement('li')
-    setOneOption.dataset.name = option.name
-    setOneOption.innerHTML += `<li>${option.name}</li>`
-    item.optionsElementsList.append(setOneOption)
-  })
-  item.wrapper.append(item.optionsElementsList)
-
-
-
-  
-
-  /*
-  item.optionsElementsList.forEach((option) => {
-    option.addEventListener('click', (event) => {
-      console.log(event)
-    })
-  })
-  */
-
-
-  
-}
-
-function listen(item) {
-  const singleOptionElemArray = item.optionsElementsList.querySelectorAll('li')
-  
-  singleOptionElemArray.forEach((option) => {
-  
-    option.addEventListener('click', (event) => {
-      
-      if (option.getAttribute('data-name') !== null) {
-        console.log(item.selectedOption)
-        console.log(option)
-        console.log(event)
-        console.log(option.getAttribute('data-name'));
+  item.options.forEach((option, index) => {
+    let buildOneOption = document.createElement('option')
+    buildOneOption.innerText = option.name
+    buildOneOption.id = option.id
+    if (index === 0) { // by default style of 1st index is styled
+      buildOneOption.className = "option-element selected" 
+    } else {
+      buildOneOption.className = "option-element"
+    }
     
-        item.selectedOption = option.getAttribute('data-name')
-        event.preventDefault();
-        
-
-
-        option.classList.add('selected')
-
-        console.log('666666666666666666')
-        console.log(item.customSelectedOption)
-        singleOptionElemArray.forEach((el) => {
-     
-
-          /*
-          console.log('------')
-          console.log(item.customSelectedOption)
-          console.log('---------')
-          console.log('333333333333')
-          console.log("EVENT", el.getAttribute('data-name'))
-          console.log("ITEM", item.selectedOption)
-          if (el.getAttribute('data-name') === item.selectedOption) {
-            el.classList.add('selected')
-            console.log('**********************************************')
-            console.log("SHOULD BE ONLY ONE")
-            console.log(el)
-            el.style.backgroundColor = "purple";
-            console.log('**********************************************')
-          } else {
-            console.log(el)
-            el.style.backgroundColor = "none";
-            el.classList.remove('selected')
-          }
-  
-          console.log('333333333333')
-
-          */
-        })
-        console.log('666666666666666666')
-    
-      }
-  
-
-
-
-      
-
-    })
+    buildOneOption.setAttribute("name", option.name)
+    item.optionList.append(buildOneOption)
   })
+
+  // then building the dropdown container, and appendChild everything
+  item.optionList.className = 'options-container'
+  item.customSelectElement.append(item.labelElement)
+  item.wrapper.append(item.customSelectElement)
+  item.wrapper.append(item.optionList)
+
 }

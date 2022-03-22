@@ -21,7 +21,6 @@ export default class extends AbstractView {
         this.wrapper = document.querySelector('.wrapper-select')
         console.log(platforms)
         const select = new Select(platforms, this.wrapper)
-        console.log(select)
       })
   }
 
@@ -71,9 +70,13 @@ export default class extends AbstractView {
   async getHtml() { // this is the html for the dashboard view
     return `
       <div class="wrapper-home">
-      <div class="wrapper-select">
-      </div>
+      <div class="container-home">
+      <h2>Welcome,</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis reiciendis nobis debitis quo quod, reprehenderit fugiat, quae fugit provident ullam maiores distinctio eos quia! Blanditiis tempore distinctio officiis doloribus aut impedit facilis, non sint voluptatem, autem vero adipisci harum animi voluptate consectetur quibusdam quae ad ipsam cumque vel? Voluptas laborum quidem inventore voluptatum quam aperiam quos tempora amet nisi, exercitationem eos quae ut, recusandae necessitatibus quo? Laborum, eveniet. Officia, atque eveniet. Incidunt dolor esse aspernatur, provident, culpa perferendis impedit sequi voluptas, exercitationem voluptatibus itaque aliquid vero eos suscipit deleniti? Similique officiis ab itaque, velit porro id aliquam sapiente earum consectetur cumque, magnam animi nemo doloremque quae molestiae beatae! Laboriosam non excepturi animi suscipit architecto dignissimos placeat quisquam id, nihil quibusdam, nulla nemo, fugit dicta tempore totam incidunt. Quibusdam minima iste similique! Dicta reiciendis minus autem possimus incidunt beatae atque provident officia accusamus, sequi quae error modi quidem eligendi. Reprehenderit, ut.</p>
+      <div class="wrapper-select"></div>
       <div class="grid"></div>
+      </div>
+      
       </div>
     `
   }

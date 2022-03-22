@@ -88,10 +88,10 @@
 .wrapper-select {
   position: absolute;
   z-index: 4;
+  border: 2px solid white;
 }
 
-.select-elem {
-  margin-top: 3rem;
+.select-container {
   display: inline-block;
   background-color: pink;
   padding: 0.25rem 0.5rem;
@@ -100,61 +100,47 @@
   display: flex;
   align-items: center;
   width: 250px;
+  transition: 0.5s;
 }
 
-.select-value {
-  border: 2px solid red;
-  padding: 0.25rem 0.5rem;
-}
-
-.select-btn-up {
-  position: absolute;
-  top: 0.4rem;
-  right: 0.6rem;
-}
-
-.select-btn-down {
-  position: absolute;
-  bottom: 0.4rem;
-  right: 0.6rem;
-  transform: rotate(180deg);
-}
-
-.select-options-list {
-  background-color: orange;
-}
-
-.select-options-list {
+.options-container {
   display: none;
+  background: purple;
   margin: 0;
   padding: 0;
-  list-style-type: none;
-  width: 250px;
 }
 
-.select-options-list.show {
+.options-container.show {
   display: block;
 }
 
-.wrapper-select li {
-  cursor: pointer;
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: red !important;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: all 0.5s;
 }
 
-.wrapper-select li:hover {
-  background-color: green;
+.overlay.show {
+  opacity: 1;
+  transition: all 0.5s;
 }
 
-.select-elem:focus {
-  outline: none;
-  border: 4px solid green;
-}
-
-li .selected {
-  background-color: purple !important;
-}
-
-li .prev-selected {
-  background-color: red;
+.container-home {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 11;
 }
 
 *, *::after, *::before {
@@ -162,16 +148,26 @@ li .prev-selected {
 }
 
 body {
+  position: relative;
   margin: 0;
-  min-height: 100vh;
+  height: 100%;
   background-color: #1a1a1a;
   font-family: "Fredoka", sans-serif;
+  padding: 0 10%;
 }
 
 #app {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+nav {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  z-index: 11;
 }
 
 /*# sourceMappingURL=style.css.map */
